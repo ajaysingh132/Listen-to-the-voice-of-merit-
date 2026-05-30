@@ -1,1 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal Voice Cloning Setup</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; }
+    h1 { color: #2c3e50; }
+    pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    .note { background: #ecf0f1; padding: 10px; border-left: 4px solid #3498db; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>🚀 Personal Voice Cloning Setup</h1>
+  <p>यह HTML पेज आपके सिस्टम पर Voice Cloning environment तैयार करने के लिए stepwise स्क्रिप्ट दिखाता है।</p>
 
+  <h2>Setup Script</h2>
+  <pre>
+#!/bin/bash
+# ==========================================
+# Personal Voice Cloning with SpeechT5
+# ==========================================
+
+echo "🚀 Personal Voice Cloning Setup Starting..."
+
+# Step 1: Update system
+sudo apt update && sudo apt upgrade -y || true
+
+# Step 2: Install required tools
+sudo apt install python3 python3-pip python3-venv ffmpeg git -y || true
+
+# Step 3: Create and activate virtual environment
+python3 -m venv myvoice_env
+source myvoice_env/bin/activate
+
+# Step 4: Upgrade pip
+pip install --upgrade pip
+
+# Step 5: Install dependencies
+pip install torch torchaudio transformers datasets soundfile librosa numpy
+
+echo "✅ Setup Complete! Activate environment with: source myvoice_env/bin/activate"
+echo "🎤 You can now run your voice cloning script."
+  </pre>
+
+  <div class="note">
+    💡 <strong>Note:</strong> इस स्क्रिप्ट को <code>setup.sh</code> नाम से सेव करें और <code>bash setup.sh</code> से चलाएँ।
+  </div>
+</body>
+</html>
